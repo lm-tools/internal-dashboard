@@ -5,6 +5,8 @@ Dashboard for builds, pull requests and monitoring
 
 To get this dashboard up and running, you will need the following environment variables:
 
+* `HTTP_USERNAME`
+* `HTTP_PASSWORD`
 * `AUTH_TOKEN`: auth token to push information to this dashboard
 * `GITHUB_AUTH_TOKEN`: create a personal access token
 * `GITHUB_ORG_NAME`: this is `lm-tools` for us
