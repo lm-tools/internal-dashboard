@@ -12,12 +12,12 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
 	testids.each do |testid|
     response = Net::HTTP.get_response(URI('https://www.statuscake.com/API/Tests/Details/?TestID='+testid+'&Username='+username+'&API='+key))
     website = JSON.parse(response.body)
-    items << { site: website['WebsiteName'], status: website['Status'], lasttest: website['LastTested'] }
+    items << { site: website['WebsiteName'], status: website['Status'], lasttest: website['LastTested'], url: website['URI'] }
     if website['Status']!='Up'
       overall_status='warning'
     end
   end
 
-  send_event('statuscake', { items:items,overall_status: overall_status })
+  send_event('statuscake', { items:items, overall_status: overall_status })
 
 end
