@@ -4,22 +4,23 @@ require 'travis/pro'
 def update_public_builds(repository)
   Travis.access_token = ENV["TRAVIS_PUBLIC_TOKEN"]
   repo = Travis::Repository.find(repository)
-  format_builds(repo)
+  format_builds(repo, "https://travis-ci.org")
 end
 
 def update_pro_builds(repository)
   Travis::Pro.access_token = ENV["TRAVIS_PRO_TOKEN"]
   repo = Travis::Pro::Repository.find(repository)
-  format_builds(repo)
+  format_builds(repo, "https://magnum.travis-ci.com")
 end
 
-def format_builds(repo)
+def format_builds(repo, root_url)
   builds = []
   build = repo.last_build
   build_info = {
     label: "Build #{build.number}",
     value: "[#{build.branch_info}], #{build.state} in #{build.duration}s",
-    state: build.state
+    state: build.state,
+    url: "#{root_url}/#{repo.slug}/builds/#{build.id}"
   }
   builds << build_info
   builds
