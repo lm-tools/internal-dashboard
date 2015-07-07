@@ -11,6 +11,10 @@ To get this dashboard up and running, you will need the following environment va
 * `STATUSCAKE_USERNAME`
 * `STATUSCAKE_API_KEY`
 * `STATUSCAKE_TEST_IDS`
+* `TRAVIS_PUBLIC_TOKEN`
+* `TRAVIS_PRO_TOKEN`
+* `TRAVIS_PUBLIC_REPOSITORIES`
+* `TRAVIS_PRO_REPOSITORIES`
 
 ### Pull requests
 
