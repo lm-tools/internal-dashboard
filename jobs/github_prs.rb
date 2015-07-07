@@ -12,6 +12,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
         repo: repo,
         updated_at: pull.updated_at.strftime("%b %-d %Y, %l:%m %p"),
         creator: "@" + pull.user.login,
+        url: pull.html_url,
         })
     end
     pulls
