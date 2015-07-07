@@ -8,6 +8,9 @@ To get this dashboard up and running, you will need the following environment va
 * `AUTH_TOKEN`: auth token to push information to this dashboard
 * `GITHUB_AUTH_TOKEN`: create a personal access token
 * `GITHUB_ORG_NAME`: this is `lm-tools` for us
+* `STATUSCAKE_USERNAME`
+* `STATUSCAKE_API_KEY`
+* `STATUSCAKE_TEST_IDS`
 
 ### Pull requests
 
