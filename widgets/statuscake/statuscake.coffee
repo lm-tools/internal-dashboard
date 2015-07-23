@@ -6,7 +6,6 @@ class Dashing.Statuscake extends Dashing.Widget
   onData: (data) ->
     node = $(@node)
     status = data.overall_status
-    node.removeClass (function (index, css) {
-        return (css.match (/(^|\s)status-\S+/g) || []).join(' ');
-    });
+    node.removeClass (index, css) ->
+      (css.match(/(^|\s)status-\S+/g) or []).join ' '
     node.addClass "status-#{status}"
