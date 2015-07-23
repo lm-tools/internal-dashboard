@@ -4,6 +4,9 @@ class Dashing.Statuscake extends Dashing.Widget
     super
 
   onData: (data) ->
-  	node = $(@node)
-  	status = data.overall_status
-  	node.addClass "status-#{status}"
+    node = $(@node)
+    status = data.overall_status
+    node.removeClass (function (index, css) {
+        return (css.match (/(^|\s)status-\S+/g) || []).join(' ');
+    });
+    node.addClass "status-#{status}"
