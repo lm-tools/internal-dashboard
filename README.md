@@ -1,4 +1,5 @@
-# internal-dashboard
+# internal-dashboard - deprecated
+*This project is no longer maintained*
 Dashboard for builds, pull requests and monitoring
 
 ### Environment variables
